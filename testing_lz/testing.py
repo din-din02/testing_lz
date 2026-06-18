@@ -2,25 +2,25 @@ from func import func
 
 def test(a, b, c, d, f):
     try:
-        res = func(a, b, c, d, f)  # вызываем основную функцию
+        res = func(a, b, c, d, f)  
         print(f"a={a}, b={b}, c={c}, d={d}, f={f}\nРезультат: {res}")
         return res
-    except ZeroDivisionError:  # ошибка при делении на 0 (c == d)
+    except ZeroDivisionError: 
         print(f"a={a}, b={b}, c={c}, d={d}, f={f}\nОшибка: деление на ноль")
         return 'деление на ноль'
-    except TypeError:  # ошибка типа данных или комплексные числа
+    except TypeError: 
         print(f"a={a}, b={b}, c={c}, d={d}, f={f}\nОшибка: ошибка типов данных")
         return 'ошибка типов данных'
-    except ValueError:  # если минус под корнем
+    except ValueError: 
         print(f"a={a}, b={b}, c={c}, d={d}, f={f}\nОшибка: корень из отрицательного числа")
         return 'корень из отрицательного числа'
-    except Exception as exc:  # непредвиденные ошибки
+    except Exception as exc:
         print(f"a={a}, b={b}, c={c}, d={d}, f={f}\nНеизвестная ошибка: {exc}")
         return f'неизвестная ошибка: {exc}'
 
 if __name__ == '__main__': 
     print('Ручное тестирование')
-    #Позитивный тест (целые числа) Всё окей.
+    #Позитивный тест (целые числа) 
     test(2, 3, 5, 3, 4)  
     #Позитивный тест (дробные числа)
     test(1.5, 2.5, 4.0, 2.0, 0.25)
